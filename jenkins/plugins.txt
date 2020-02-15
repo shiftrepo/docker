@@ -1,0 +1,6 @@
+# trailing spaces
+junit:latest 
+
+# leading spaces, and trailing spaces
+git:latest  
+
