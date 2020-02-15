@@ -5,7 +5,12 @@ USER root
 ENV JENKINS_REF /usr/share/jenkins/ref
 
 # install jenkins plugins
-COPY ./plugins.txt $JENKINS_REF/
+#COPY ./plugins.txt $JENKINS_REF/
+
+RUN echo -e "\n\
+git:latest\n\
+junit:latest\n\
+" >> $JENKINS_REF/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < $JENKINS_REF/plugins.txt
 
 RUN apk add --no-cache --virtual make && \
